@@ -1,4 +1,5 @@
-![](ofxaddons_thumbnail.png) 
+![ofxaddons_thumbnail](https://user-images.githubusercontent.com/7929704/81636183-296aa100-93e1-11ea-9356-d9302389b192.png)
+
 # ofxPoissonFill
 
 *Poisson filling shader for [OpenFrameworks](http://openframeworks.cc)*
