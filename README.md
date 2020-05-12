@@ -38,7 +38,7 @@ pf.getTexture().draw(0,0);
 
 ```
 
-See also [`example`](example)
+See also [`example`](example), [API Documentation](https://ofxpoissonfill.netlify.app/class_poisson_fill.html)
 
 ## Reference
 
