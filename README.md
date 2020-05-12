@@ -44,3 +44,5 @@ See also [`example`](example), [API Documentation](https://ofxpoissonfill.netlif
 
 - [Convolution Pyramids, Farbman et al., 2011](https://www.cse.huji.ac.il/labs/cglab/projects/convpyr/data/convpyr-small.pdf)
 - [Rendu](https://github.com/kosua20/Rendu)
+
+**Developed at [Frank-Ratchye STUDIO for Creative Inquiry](https://studioforcreativeinquiry.org) at Carnegie Mellon University.**
