@@ -1,14 +1,14 @@
 ![](ofxaddons_thumbnail.png) 
 # ofxPoissonFill
 
-*Poisson filling shader for OpenFrameworks*
-
-
+*Poisson filling shader for [OpenFrameworks](http://openframeworks.cc)*
 
 - Uses GLSL shader
 - Uses convolution pyramid algorithm
 - Fast
 - Header-only
+
+![Snip20200511_9](https://user-images.githubusercontent.com/7929704/81635611-95e4a080-93df-11ea-836e-1323a33ffc92.png)
 
 ## Installation
 
@@ -36,6 +36,8 @@ pf.process(tex);
 pf.getTexture().draw(0,0);
 
 ```
+
+See also [`example`](example)
 
 ## Reference
 
