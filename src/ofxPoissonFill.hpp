@@ -84,9 +84,15 @@ class PoissonFill{public:
     p.begin();
     ofClear(0,0,0,0);
     shader.begin();
-    shader.setUniform1i("w",tex1->getWidth() );
-    shader.setUniform1i("h",tex1->getHeight());
-    shader.setUniform1f("bias",(float)ofGetFrameNum()*0.01);
+    
+    // <!> theoratically we can do boundry testing with w/h
+    // but the result looks identical without it,
+    // so for the sake of speed this is commented out
+    // same with the w/h uniforms/if statement in the shader
+    //
+    // shader.setUniform1i("w",tex1->getWidth() );
+    // shader.setUniform1i("h",tex1->getHeight());
+    
     shader.setUniformTexture("unf",*tex1,1);
     if (tex2 != NULL){
       shader.setUniformTexture("fil",*tex2,2);
@@ -105,8 +111,8 @@ class PoissonFill{public:
       #version 120
       uniform sampler2DRect unf;
       uniform sampler2DRect fil;
-      uniform int w;
-      uniform int h;
+      // uniform int w;
+      // uniform int h;
       uniform bool isup;
                              
       float h1(int i){
@@ -142,9 +148,9 @@ class PoissonFill{public:
               int nx = x + dx;
               int ny = y + dy;
 
-//              if (nx < 0 || nx >= w || ny < 0 || ny >= h){
-//                continue;
-//              }
+              // if (nx < 0 || nx >= w || ny < 0 || ny >= h){
+              //   continue;
+              // }
 
               vec4 col = texture2DRect(unf, vec2(float(nx)+1.0, float(ny)+1.0));
 
@@ -169,9 +175,9 @@ class PoissonFill{public:
               int nx = j + dx;
               int ny = i + dy;
 
-//              if (nx < 0 || nx >= w || ny < 0 || ny >= h){
-//                continue;
-//              }
+              // if (nx < 0 || nx >= w || ny < 0 || ny >= h){
+              //   continue;
+              // }
 
               vec4 col = texture2DRect(unf, vec2(float(nx)+1.0, float(ny)+1.0));
 
@@ -187,9 +193,9 @@ class PoissonFill{public:
               int ny = i + dy;
               nx /= 2;
               ny /= 2;
-//              if (nx < 0 || nx >= w/2 || ny < 0 || ny >= h/2){
-//                continue;
-//              }
+              // if (nx < 0 || nx >= w/2 || ny < 0 || ny >= h/2){
+              //   continue;
+              // }
               vec4 col = texture2DRect(fil, vec2(float(nx), float(ny)));
 
               acc.r += h2 * h1(dx+2) * h1(dy+2) * col.r;
